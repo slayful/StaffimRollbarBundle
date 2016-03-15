@@ -53,7 +53,7 @@ class RollbarReporter
      */
     public function __construct(
         RollbarNotifier $rollbarNotifier,
-        TokenStorageInterface $tokenStorage,
+        TokenStorageInterface $tokenStorage = null,
         ReportDecisionManager $reportDecisionManager,
         $errorLevel = -1,
         array $scrubExceptions = array(),
