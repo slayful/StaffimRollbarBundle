@@ -171,6 +171,10 @@ class RollbarReporter
      */
     private function getUserData()
     {
+        if (null === $this->tokenStorage) {
+            return null;
+        }
+
         if ($this->tokenStorage->getToken() && $this->tokenStorage->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             $userData = array();
             $user = $this->tokenStorage->getToken()->getUser();
